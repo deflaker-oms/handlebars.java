@@ -3,6 +3,7 @@ language: java
 jdk:
   - oraclejdk8
 script:
-  - mvn clean install coveralls:report -P coverage
+  - mvn -B clean install -P coverage
+#   - mvn -B clean install coveralls:report -P coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)
